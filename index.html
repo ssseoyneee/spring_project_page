@@ -142,16 +142,20 @@
             Personalizing Large Language Models typically relies on static retrieval or one-time adaptation, 
             assuming user preferences remain invariant over time. 
             However, real-world interactions are dynamic, where user interests continuously evolve, 
-            posing a challenge for models to adapt to <strong>preference drift without catastrophic forgetting</strong>. 
+            posing a challenge for models to <strong>adapt to preference drift</strong> without catastrophic forgetting. 
             Standard continual learning approaches often struggle in this context, as they indiscriminately update on noisy interaction streams, 
             failing to distinguish genuine preference shifts from transient contexts. 
           </p>
           <p>
             To address this, we introduce <strong>SPRInG</strong>, a novel <strong>semi-parametric framework</strong> designed for effective <strong>continual personalization</strong>. 
-            During training, SPRInG employs <strong>drift-driven selective adaptation</strong>, which utilizes a likelihood-based scoring function to identify high-novelty interactions. 
-            This allows the model to selectively update the user-specific adapter on drift signals while preserving hard-to-learn residuals in a <strong>replay buffer</strong>.
-            During inference, we apply <strong>strict relevance gating</strong> and fuse parametric knowledge with retrieved history via <strong>logit interpolation</strong>. 
-            Experiments on the long-form personalized generation benchmark demonstrate that SPRInG <strong>outperforms existing baselines</strong>, validating its robustness for real-world continual personalization.
+          </p>
+          <p>
+            During training, SPRInG employs drift-driven selective adaptation, which utilizes a likelihood-based scoring function to identify high-novelty interactions. 
+            This allows the model to selectively update the user-specific adapter on drift signals while preserving hard-to-learn residuals in a replay buffer.
+            During inference, we apply strict relevance gating and fuse parametric knowledge with retrieved history via logit interpolation. 
+          </p>
+          <p></p>
+            Experiments on the long-form personalized generation benchmark demonstrate that SPRInG outperforms existing baselines, validating its robustness for real-world continual personalization.
           </p>        
         </div>
       </div>
