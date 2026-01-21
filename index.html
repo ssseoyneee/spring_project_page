@@ -166,8 +166,38 @@
 
 
 <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Motivation</h2>
+    <div class="content has-text-justified">
+      <p>
+        Existing personalization methods often assume a <strong>time-invariant</strong> user, where preferences remain static. 
+        However, in reality, user traits constantly evolve, leading to <strong>preference drifts</strong>. 
+        Standard models struggle to adapt to these changes without expensive retraining or risking catastrophic forgetting.
+      </p>
+    </div>
+  </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">How SPRInG Works</h2>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <img src="./static/images/method_overview.png" alt="SPRInG Method Overview" style="width:100%; margin-bottom:2rem;">
+        <div class="content has-text-justified">
+          <p>
+            <strong>SPRInG</strong> operates in two key phases:
+          </p>
+          <ul>
+            <li><strong>Drift-Driven Selective Adaptation:</strong> Identifies and learns only high-novelty interactions that signal genuine preference shifts.</li>
+            <li><strong>Retrieval-Interpolated Generation:</strong> Dynamically fuses parametric adapter knowledge with historical evidence at the logit level.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
