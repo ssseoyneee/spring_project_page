@@ -165,63 +165,80 @@
 </section>
 
 
+<section class="section" style="background-color: #fcfcfc;">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2" style="font-weight: 800; letter-spacing: -1px;">Motivation</h2>
+      <p class="subtitle is-5 has-text-grey">Beyond static personalization to dynamic evolution</p>
+    </div>
+
+    <div class="columns is-centered mb-6">
+      <div class="column is-10">
+        <div style="border-left: 4px solid #4a4a4a; padding-left: 1.5rem;">
+          <h3 class="title is-4 mb-3">Current Limitations</h3>
+          <p class="mb-4">Existing methods rely on a <span style="background: #efefef; padding: 2px 6px; border-radius: 4px; font-weight: 600;">time-invariant</span> view, failing to capture user evolution:</p>
+          <div class="columns">
+            <div class="column">
+              <p class="mb-1"><strong>Non-parametric</strong></p>
+              <p class="is-size-7 has-text-grey">Histories & Profiles</p>
+              <p class="is-size-7 has-text-danger-dark">✕ Weak recency, high costs</p>
+            </div>
+            <div class="column">
+              <p class="mb-1"><strong>Parametric</strong></p>
+              <p class="is-size-7 has-text-grey">Adapters (LoRA)</p>
+              <p class="is-size-7 has-text-danger-dark">✕ Expensive updates, forgetting</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box" style="border-radius: 20px; border: none; background: linear-gradient(145deg, #ffffff, #f0f0f0); box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff; padding: 3rem;">
+      <h3 class="title is-4 has-text-centered mb-5">The Core Challenge: <span style="color: #3273dc;">Preference Drifts</span></h3>
+      <div class="columns has-text-centered">
+        <div class="column">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌊</div>
+          <p class="title is-5 mb-2">Continuous & Noisy</p>
+          <p class="is-size-6 has-text-grey">No clear task boundaries<br>or abrupt shifts</p>
+        </div>
+        <div class="column" style="border-left: 1px solid #eee;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">📈</div>
+          <p class="title is-5 mb-2">Gradual Evolution</p>
+          <p class="is-size-6 has-text-grey">Hard to distinguish<br>from transient noise</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons is-centered mt-6">
+      <span class="button is-rounded is-static is-light" style="border: 1px solid #3273dc; color: #3273dc; font-weight: 600;">Selective Drift Detection</span>
+      <span class="button is-rounded is-static is-light" style="border: 1px solid #48c774; color: #48c774; font-weight: 600;">Robust Adaptation</span>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered mb-6">Motivation</h2>
-    
-    <div class="columns is-multiline">
-      <div class="column is-12">
-        <div class="notification is-white" style="border-left: 5px solid #dbdbdb;">
-          <p class="subtitle is-5"><strong>Current Limitations</strong></p>
-          <p class="mb-4">Existing methods rely on a <span class="tag is-light is-medium">time-invariant</span> view, failing to capture user evolution:</p>
-          <div class="columns">
-            <div class="column">
-              <p><strong>Non-parametric</strong> <br>
-              <small class="has-text-grey">Histories & Profiles</small></p>
-              <p class="is-size-7 has-text-danger">Issues: Weak recency, high storage costs</p>
-            </div>
-            <div class="column">
-              <p><strong>Parametric</strong> <br>
-              <small class="has-text-grey">Adapters (LoRA)</small></p>
-              <p class="is-size-7 has-text-danger">Issues: Expensive updates, forgetting</p>
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2" style="font-weight: 800; letter-spacing: -1px;">How SPRInG Works</h2>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="box p-0" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+          <img src="./static/images/spring_method.png" alt="SPRInG Method Overview" style="width: 100%; display: block;">
+        </div>
+
+        <div class="columns mt-5">
+          <div class="column">
+            <div class="notification is-white" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 4px solid #3273dc; height: 100%;">
+              <h4 class="title is-5" style="color: #3273dc;">1. Drift-Driven Selective Adaptation</h4>
+              <p class="is-size-6 has-text-grey-darker">Identifies and learns only <strong>high-novelty interactions</strong> that signal genuine preference shifts.</p>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="column is-12">
-        <div class="box has-background-warning-light">
-          <p class="subtitle is-5 has-text-centered"><strong>The Core Challenge: Preference Drifts</strong></p>
-          <div class="columns has-text-centered">
-            <div class="column">
-              <div class="icon is-large has-text-warning">
-                <i class="fas fa-wave-square fa-2x"></i>
-              </div>
-              <p class="is-weight-bold">Continuous & Noisy</p>
-              <p class="is-size-7">No clear task boundaries or abrupt shifts</p>
-            </div>
-            <div class="column">
-              <div class="icon is-large has-text-warning">
-                <i class="fas fa-chart-line fa-2x"></i>
-              </div>
-              <p class="is-weight-bold">Gradual Evolution</p>
-              <p class="is-size-7">Hard to distinguish from transient noise</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="column is-12">
-        <div class="content">
-          <p class="has-text-centered is-size-5">
-            We propose <strong>Continual LLM Personalization</strong> to achieve:
-          </p>
-          <div class="columns">
-            <div class="column has-text-centered">
-              <span class="tag is-info is-light is-large">Selective Drift Detection</span>
-            </div>
-            <div class="column has-text-centered">
-              <span class="tag is-success is-light is-large">Robust Adaptation</span>
+          <div class="column">
+            <div class="notification is-white" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 4px solid #48c774; height: 100%;">
+              <h4 class="title is-5" style="color: #48c774;">2. Retrieval-Interpolated Generation</h4>
+              <p class="is-size-6 has-text-grey-darker">Dynamically fuses <strong>parametric adapter knowledge</strong> with historical evidence at the logit level.</p>
             </div>
           </div>
         </div>
@@ -229,41 +246,6 @@
     </div>
   </div>
 </section>
-
-<hr>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">How SPRInG Works</h2>
-    <div class="columns is-centered mt-5">
-      <div class="column is-full-width">
-        <div class="box p-0 overflow-hidden" style="border: 1px solid #eee;">
-          <img src="./static/images/spring_method.png" alt="SPRInG Method Overview" style="width:100%; display:block;">
-        </div>
-        
-        <div class="columns mt-4">
-          <div class="column">
-            <div class="card card-equal-height" style="height: 100%;">
-              <div class="card-content">
-                <p class="title is-5 has-text-info">1. Drift-Driven Selective Adaptation</p>
-                <p class="is-size-6">Identifies and learns only <strong>high-novelty interactions</strong> that signal genuine preference shifts.</p>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card card-equal-height" style="height: 100%;">
-              <div class="card-content">
-                <p class="title is-5 has-text-success">2. Retrieval-Interpolated Generation</p>
-                <p class="is-size-6">Dynamically fuses <strong>parametric adapter knowledge</strong> with historical evidence at the logit level.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-  
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
