@@ -165,73 +165,79 @@
 </section>
 
 
-<section class="section">
+<section class="section" style="background-color: #fafafa;">
   <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2" style="font-weight: 800; letter-spacing: -1px;">Motivation</h2>
+      <p class="subtitle is-5 has-text-grey">Why existing methods fail in evolving user environments</p>
+    </div>
+
     <div class="columns is-centered mb-6">
       <div class="column is-11">
-        <div style="border-left: 4px solid #4a4a4a; padding-left: 1.5rem;">
-          <h3 class="title is-4 mb-3">Current Limitations</h3>
-          <p class="is-size-5 mb-5">
-            Existing methods rely on a <span style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-weight: 600;">time-invariant</span> view, failing to capture user evolution:
-          </p>
-          
-          <div class="columns mt-4">
-            <div class="column">
-              <div class="mb-4">
-                <h4 class="title is-5 mb-2">
-                  <span style="color: #3273dc; margin-right: 8px;">●</span>Non-parametric
-                </h4>
-                <p class="is-size-6 mb-3">Leveraging retrieved interaction histories or user profiles during prompting</p>
-              </div>
-              <div style="border-top: 1px solid #eee; padding-top: 1rem;">
-                <p class="is-size-6 has-text-danger-dark mb-1" style="font-weight: 700;">Critical Issues:</p>
-                <ul class="is-size-6 has-text-danger-dark" style="list-style-type: none; margin-left: 0;">
-                  <li style="margin-bottom: 4px;">✕ Weak recency signals in static profiles</li>
-                  <li>✕ Rising storage & retrieval latency</li>
-                </ul>
-              </div>
-            </div>
+        <h3 class="title is-4 mb-4" style="display: flex; align-items: center;">
+          <span style="background: #4a4a4a; color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; justify-content: center; align-items: center; font-size: 0.9rem; margin-right: 12px;">1</span>
+          Existing Personalization: The Time-Invariant Trap
+        </h3>
+        <p class="is-size-6 mb-5">
+          Current paradigms assume a <strong>time-invariant</strong> view of the user. Fixed histories are reused for retrieval, and parametric models remain frozen after initial training, failing to account for constant <strong>preference drifts</strong>.
+        </p>
 
-            <div class="column">
-              <div class="mb-4">
-                <h4 class="title is-5 mb-2">
-                  <span style="color: #48c774; margin-right: 8px;">●</span>Parametric
-                </h4>
-                <p class="is-size-6 mb-3">Encoding user preferences through direct parameter adaptation (e.g., LoRA)</p>
-              </div>
-              <div style="border-top: 1px solid #eee; padding-top: 1rem;">
-                <p class="is-size-6 has-text-danger-dark mb-1" style="font-weight: 700;">Critical Issues:</p>
-                <ul class="is-size-6 has-text-danger-dark" style="list-style-type: none; margin-left: 0;">
-                  <li style="margin-bottom: 4px;">✕ Prohibitively expensive frequent updates</li>
-                  <li>✕ High risk of catastrophic forgetting</li>
-                </ul>
-              </div>
+        <div class="columns">
+          <div class="column">
+            <div style="border-left: 3px solid #3273dc; padding-left: 1rem;">
+              <p class="title is-6 mb-2">Non-parametric (RAG/PAG)</p>
+              <p class="is-size-7 has-text-grey mb-2">Retrieved interaction histories or user profiles</p>
+              <p class="is-size-6 has-text-danger-dark" style="font-weight: 600;">✕ Weak recency signals & rising costs</p>
+            </div>
+          </div>
+          <div class="column">
+            <div style="border-left: 3px solid #48c774; padding-left: 1rem;">
+              <p class="title is-6 mb-2">Parametric (Adapters/LoRA)</p>
+              <p class="is-size-7 has-text-grey mb-2">Encoding preferences via parameter adaptation</p>
+              <p class="is-size-6 has-text-danger-dark" style="font-weight: 600;">✕ Expensive updates & catastrophic forgetting</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-    <div class="box" style="border-radius: 20px; border: none; background: linear-gradient(145deg, #ffffff, #f0f0f0); box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff; padding: 3rem;">
-      <h3 class="title is-4 has-text-centered mb-5">The Core Challenge: <span style="color: #3273dc;">Preference Drifts</span></h3>
-      <div class="columns has-text-centered">
-        <div class="column">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌊</div>
-          <p class="title is-5 mb-2">Continuous & Noisy</p>
-          <p class="is-size-6 has-text-grey">No clear task boundaries<br>or abrupt shifts</p>
-        </div>
-        <div class="column" style="border-left: 1px solid #eee;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">📈</div>
-          <p class="title is-5 mb-2">Gradual Evolution</p>
-          <p class="is-size-6 has-text-grey">Hard to distinguish<br>from transient noise</p>
+
+    <div class="columns is-centered mb-6">
+      <div class="column is-11">
+        <div class="box" style="border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border-radius: 16px;">
+          <h3 class="title is-4 mb-4" style="display: flex; align-items: center;">
+            <span style="background: #4a4a4a; color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; justify-content: center; align-items: center; font-size: 0.9rem; margin-right: 12px;">2</span>
+            Standard CL vs. Personalization Reality
+          </h3>
+          <p class="is-size-6 mb-5">
+            While Continual Learning (CL) offers a path to sequential updates, standard approaches are suboptimal because user interaction streams are <strong>inherently continuous and noisy.</strong>
+          </p>
+          
+          <div class="columns has-text-centered">
+            <div class="column">
+              <p class="mb-1" style="font-size: 1.5rem;">🚧</p>
+              <p class="title is-6 mb-1">No Clear Boundaries</p>
+              <p class="is-size-7 has-text-grey">Preferences drift gradually, not via discrete task shifts.</p>
+            </div>
+            <div class="column">
+              <p class="mb-1" style="font-size: 1.5rem;">🌪️</p>
+              <p class="title is-6 mb-1">Transient Noise</p>
+              <p class="is-size-7 has-text-grey">Noise can be mistaken for informative drift (high loss/uncertainty).</p>
+            </div>
+          </div>
+          
+          <div class="notification is-light mt-4 is-size-6 has-text-centered" style="border-radius: 8px;">
+            The challenge lies in <strong>Selective Drift Detection</strong>: distinguishing genuine evolution from noise.
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="buttons is-centered mt-6">
-      <span class="button is-rounded is-static is-light" style="border: 1px solid #3273dc; color: #3273dc; font-weight: 600;">Selective Drift Detection</span>
-      <span class="button is-rounded is-static is-light" style="border: 1px solid #48c774; color: #48c774; font-weight: 600;">Robust Adaptation</span>
+    <div class="has-text-centered mt-6 mb-6">
+      <p class="is-size-5 mb-4">To bridge this gap, we propose <strong>SPRInG</strong></p>
+      <div class="is-flex is-justify-content-center" style="gap: 10px;">
+        <span class="tag is-info is-light is-medium" style="font-weight: 600;">Selective Parametric Adaptation</span>
+        <span class="tag is-success is-light is-medium" style="font-weight: 600;">Retrieval-Interpolated Generation</span>
+      </div>
     </div>
   </div>
 </section>
@@ -240,25 +246,46 @@
   <div class="container is-max-desktop">
     <div class="has-text-centered mb-6">
       <h2 class="title is-2" style="font-weight: 800; letter-spacing: -1px;">How SPRInG Works</h2>
+      <p class="is-size-6 has-text-grey">Jointly optimizing training and inference for evolving preferences</p>
     </div>
 
     <div class="columns is-centered">
       <div class="column is-full">
-        <div class="box p-0" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+        <div class="box p-0 mb-6" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #f0f0f0;">
           <img src="./static/images/spring_method.png" alt="SPRInG Method Overview" style="width: 100%; display: block;">
         </div>
 
-        <div class="columns mt-5">
+        <div class="columns">
           <div class="column">
-            <div class="notification is-white" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 4px solid #3273dc; height: 100%;">
-              <h4 class="title is-5" style="color: #3273dc;">1. Drift-Driven Selective Adaptation</h4>
-              <p class="is-size-6 has-text-grey-darker">Identifies and learns only <strong>high-novelty interactions</strong> that signal genuine preference shifts.</p>
+            <div class="card" style="height: 100%; border-radius: 12px; box-shadow: none; border: 1px solid #eee;">
+              <div class="card-content">
+                <div class="is-flex is-align-items-center mb-3">
+                  <span class="tag is-info mr-2">Training Stage</span>
+                  <h4 class="title is-5 mb-0" style="color: #3273dc;">Drift-Driven Selective Adaptation</h4>
+                </div>
+                <p class="is-size-6 has-text-grey-darker mb-3">
+                  Measures <strong>sample novelty</strong> with a new scoring function to fine-tune only on genuine drift. 
+                </p>
+                <p class="is-size-7 has-text-grey">
+                  * Constructs a <strong>residual replay buffer</strong> to preserve nuances the adapter cannot internalize.
+                </p>
+              </div>
             </div>
           </div>
           <div class="column">
-            <div class="notification is-white" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 4px solid #48c774; height: 100%;">
-              <h4 class="title is-5" style="color: #48c774;">2. Retrieval-Interpolated Generation</h4>
-              <p class="is-size-6 has-text-grey-darker">Dynamically fuses <strong>parametric adapter knowledge</strong> with historical evidence at the logit level.</p>
+            <div class="card" style="height: 100%; border-radius: 12px; box-shadow: none; border: 1px solid #eee;">
+              <div class="card-content">
+                <div class="is-flex is-align-items-center mb-3">
+                  <span class="tag is-success mr-2">Inference Stage</span>
+                  <h4 class="title is-5 mb-0" style="color: #48c774;">Retrieval-Interpolated Generation</h4>
+                </div>
+                <p class="is-size-6 has-text-grey-darker mb-3">
+                  Dynamic fusion of <strong>parametric knowledge</strong> and <strong>non-parametric evidence</strong> via logit-level interpolation.
+                </p>
+                <p class="is-size-7 has-text-grey">
+                  * Features a <strong>strict gating mechanism</strong> to filter out irrelevant historical context.
+                </p>
+              </div>
             </div>
           </div>
         </div>
