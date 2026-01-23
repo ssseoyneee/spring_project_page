@@ -264,17 +264,18 @@
         </div>
 
         <div class="columns is-multiline">
+          
           <div class="column is-12 mb-5">
-            <div class="notification is-white" style="border-radius: 20px; border: 1px solid #eee; padding: 2.5rem; box-shadow: none;">
+            <div class="notification is-light" style="border-radius: 20px; border: 1px solid #ddd; padding: 2.5rem; box-shadow: none; background-color: #f9f9f9;">
               <div class="is-flex is-align-items-center mb-4">
-                <span class="tag is-info is-medium mr-3" style="font-weight: 800; border-radius: 6px;">TRAINING</span>
+                <span class="tag is-medium mr-3" style="font-weight: 800; border-radius: 6px; background-color: #DB4D81; color: white;">TRAINING</span>
                 <h3 class="title is-4 mb-0" style="color: #DB4D81;">Drift-Driven Selective Adaptation</h3>
               </div>
               
               <div class="content is-size-6">
                 <p class="mb-4">SPRInG selectively updates the adapter by prioritizing interactions with high <strong>Drift Scores</strong> to isolate genuine preference novelty.</p>
                 
-                <div style="background: #DB4D81; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #DB4D81;" class="mb-5">
+                <div style="background: #ffffff; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #DB4D81;" class="mb-5">
                   <p class="is-size-7 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Drift Score</p>
                   <div class="is-size-5 has-text-centered mb-1">
                     $$ \mathcal{S}(q, a) = \underbrace{-\log \frac{p_\texttt{adap}}{p_\texttt{base}}}_{\text{Novelty}} + \underbrace{\alpha \cdot \log p_\texttt{base}}_{\text{Quality}} $$
@@ -290,16 +291,16 @@
           </div>
 
           <div class="column is-12">
-            <div class="notification is-white" style="border-radius: 20px; border: 1px solid #eee; padding: 2.5rem; box-shadow: none;">
+            <div class="notification is-light" style="border-radius: 20px; border: 1px solid #ddd; padding: 2.5rem; box-shadow: none; background-color: #f9f9f9;">
               <div class="is-flex is-align-items-center mb-4">
-                <span class="tag is-success is-medium mr-3" style="font-weight: 800; border-radius: 6px;">INFERENCE</span>
-                <h3 class="title is-4 mb-0" style="color: #48c774;">Gated Retrieval & Interpolation</h3>
+                <span class="tag is-medium mr-3" style="font-weight: 800; border-radius: 6px; background-color: #7B9264; color: white;">INFERENCE</span>
+                <h3 class="title is-4 mb-0" style="color: #7B9264;">Gated Retrieval & Interpolation</h3>
               </div>
 
               <div class="content is-size-6">
                 <p class="mb-4">Dynamically balances internalized parametric knowledge with explicit non-parametric context at the <strong>logit level</strong>.</p>
 
-                <div style="background: #7B9264; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #7B9264;" class="mb-5">
+                <div style="background: #ffffff; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #7B9264;" class="mb-5">
                   <p class="is-size-7 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Logit Interpolation</p>
                   <div class="is-size-5 has-text-centered mb-1">
                     $$ p_\texttt{fin} = \lambda \cdot p_\texttt{ret} + (1 - \lambda) \cdot p_\texttt{par} $$
@@ -318,7 +319,7 @@
     </div>
   </div>
 </section>
-
+  
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title has-text-centered is-3">BibTeX</h2>
