@@ -182,7 +182,7 @@
 
           <div class="columns">
             <div class="column">
-              <div style="border-left: 4px solid #3273dc; padding-left: 1.2rem; height: 100%;">
+              <div style="border-left: 4px solid #696969; padding-left: 1.2rem; height: 100%;">
                 <p class="title is-6 mb-2">Non-parametric Strategies</p>
                 <p class="is-size-6 has-text-grey mb-3">Leveraging retrieved interaction histories or user profiles during prompting.</p>
                 <p class="is-size-6 has-text-danger-dark" style="font-weight: 600;">❌ Weak recency signals</p>
@@ -190,7 +190,7 @@
               </div>
             </div>
             <div class="column">
-              <div style="border-left: 4px solid #48c774; padding-left: 1.2rem; height: 100%;">
+              <div style="border-left: 4px solid #696969; padding-left: 1.2rem; height: 100%;">
                 <p class="title is-6 mb-2">Parametric Strategies</p>
                 <p class="is-size-6 has-text-grey mb-3">Encoding user preferences through direct parameter adaptation (e.g., LoRA).</p>
                 <p class="is-size-6 has-text-danger-dark" style="font-weight: 600;">❌ Expensive updates</p>
@@ -275,9 +275,9 @@
                 <p class="mb-4">SPRInG selectively updates the adapter by prioritizing interactions with high <strong>Drift Scores</strong> to isolate genuine preference novelty.</p>
                 
                 <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #3273dc;" class="mb-5">
-                  <p class="is-size-7 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Drift Score (Eq. 1)</p>
+                  <p class="is-size-7 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Drift Score</p>
                   <div class="is-size-5 has-text-centered mb-1">
-                    $$ \mathcal{S}(q, a) = \underbrace{-\log \frac{p_{adap}}{p_{base}}}_{\text{Novelty}} + \alpha \underbrace{\log p_{base}}_{\text{Quality}} $$
+                    $$ \mathcal{S}(q, a) = \underbrace{-\log \frac{p_\texttt{adap}}{p_\texttt{base}}}_{\text{Novelty}} + \alpha \cdot \underbrace{\log p_\texttt{base}}_{\text{Quality}} $$
                   </div>
                 </div>
 
@@ -300,9 +300,9 @@
                 <p class="mb-4">Dynamically balances internalized parametric knowledge with explicit non-parametric context at the <strong>logit level</strong>.</p>
 
                 <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #48c774;" class="mb-5">
-                  <p class="is-size-7 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Logit Interpolation (Eq. 8)</p>
+                  <p class="is-size-7 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Logit Interpolation</p>
                   <div class="is-size-5 has-text-centered mb-1">
-                    $$ p_{fin} = \lambda \cdot p_{ret} + (1 - \lambda) \cdot p_{par} $$
+                    $$ p_\texttt{fin} = \lambda \cdot p_\texttt{ret} + (1 - \lambda) \cdot p_\texttt{par} $$
                   </div>
                 </div>
 
