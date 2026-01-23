@@ -265,7 +265,7 @@
 
         <div class="columns is-multiline">
           
-          <div class="column is-12 mb-5">
+          <div class="column is-12 mb-2">
             <div class="notification is-light" style="border-radius: 20px; border: 1px solid #ddd; padding: 2.5rem; box-shadow: none; background-color: #f9f9f9;">
               <div class="is-flex is-align-items-center mb-4">
                 <span class="tag is-medium mr-3" style="font-weight: 800; border-radius: 6px; background-color: #DB4D81; color: white;">TRAINING</span>
@@ -273,7 +273,9 @@
               </div>
               
               <div class="content is-size-6">
-                <p class="mb-4">SPRInG selectively updates the adapter by prioritizing interactions with high <strong>Drift Scores</strong> to isolate genuine preference novelty.</p>
+                <p class="mb-4">
+                  SPRInG updates the LoRA adapter <strong>exclusively on high-drift interactions</strong>, ensuring the model adapts to genuine preference evolution while filtering out transient noise.
+                </p>
                 
                 <div style="background: #ffffff; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #DB4D81;" class="mb-5">
                   <p class="is-size-7 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Drift Score</p>
@@ -281,10 +283,10 @@
                     $$ \mathcal{S}(q, a) = \underbrace{-\log \frac{p_\texttt{adap}}{p_\texttt{base}}}_{\text{Novelty}} + \underbrace{\alpha \cdot \log p_\texttt{base}}_{\text{Quality}} $$
                   </div>
                 </div>
-
+          
                 <ul class="ml-4" style="line-height: 1.6;">
-                  <li class="mb-2"><strong>Drift Sample Selection:</strong> Balances novelty (unfamiliar preference patterns) with linguistic quality (validity).</li>
-                  <li class="mb-2"><strong>Residual Replay Buffer:</strong> Re-evaluates post-update to store interactions that remain challenging, preserving sparse historical nuances.</li>
+                  <li class="mb-2"><strong>Drift Sample Selection:</strong> Distinguishes meaningful preference shifts from uninformative noise by balancing <em>pattern novelty</em> with <em>linguistic quality</em>.</li>
+                  <li class="mb-2"><strong>Residual Replay Buffer:</strong> Preserves <strong>hard-to-learn interactions</strong> that remain challenging even after the adapter update, preventing the loss of sparse historical nuances.</li>
                 </ul>
               </div>
             </div>
@@ -298,7 +300,7 @@
               </div>
 
               <div class="content is-size-6">
-                <p class="mb-4">Dynamically balances internalized parametric knowledge with explicit non-parametric context at the <strong>logit level</strong>.</p>
+                <p class="mb-4">Dynamically fuses <strong>internalized parametric knowledge</strong> of stable patterns with <strong>explicit non-parametric context</strong> from the replay buffer at the <strong>logit level</strong>, ensuring responses reflect both long-term traits and specific historical details.</p>
 
                 <div style="background: #ffffff; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #7B9264;" class="mb-5">
                   <p class="is-size-7 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Logit Interpolation</p>
@@ -308,8 +310,8 @@
                 </div>
 
                 <ul class="ml-4" style="line-height: 1.6;">
-                  <li class="mb-2"><strong>Relevance Gating:</strong> Applies a similarity threshold $\sigma$ to ensure retrieval only occurs when strong historical evidence exists.</li>
-                  <li class="mb-2"><strong>Dual-path Fusion:</strong> Interpolates the Parametric Path and Retrieval-augmented Path to mitigate the risk of irrelevant context noise.</li>
+                  <li class="mb-2"><strong>Relevance Gating:</strong> Applies a similarity threshold to ensure retrieval only occurs when strong historical evidence exists.</li>
+                  <li class="mb-2"><strong>Dual-path Fusion:</strong> Interpolates the Parametric Path and Retrieval-augmented Path to leverage complementary signals, combining internalized preference patterns with specific historical evidence.</li>
                 </ul>
               </div>
             </div>
