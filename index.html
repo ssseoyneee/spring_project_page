@@ -167,70 +167,97 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Motivation</h2>
+    <h2 class="title is-3 has-text-centered mb-6">Motivation</h2>
     
-    <div class="content">
-      <p>
-        While LLM personalization is rapidly advancing, existing methods primarily rely on a <strong>time-invariant</strong> view of the user:
-      </p>
-      <ul>
-        <li>
-          <strong>Non-parametric Strategies:</strong> Use retrieved histories or profiles. 
-          <span class="has-text-grey-light">→ Issues: Weak recency signals, rising storage/retrieval costs.</span>
-        </li>
-        <li>
-          <strong>Parametric Strategies:</strong> Encode preferences via adapters (e.g., LoRA). 
-          <span class="has-text-grey-light">→ Issues: Expensive updates, risk of catastrophic forgetting.</span>
-        </li>
-      </ul>
-
-      <hr>
-
-      <div class="notification is-light">
-        <p>
-          <strong>The Challenge:</strong> Real-world user traits are not static; they exhibit constant <strong>preference drifts</strong>. Standard Continual Learning (CL) struggles here because user streams are:
-        </p>
-        <div class="columns">
-          <div class="column">
-            <div class="box has-text-centered">
-              <strong>Continuous & Noisy</strong>
-              <p class="is-size-7">No clear task boundaries or abrupt shifts.</p>
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <div class="notification is-white" style="border-left: 5px solid #dbdbdb;">
+          <p class="subtitle is-5"><strong>Current Limitations</strong></p>
+          <p class="mb-4">Existing methods rely on a <span class="tag is-light is-medium">time-invariant</span> view, failing to capture user evolution:</p>
+          <div class="columns">
+            <div class="column">
+              <p><strong>Non-parametric</strong> <br>
+              <small class="has-text-grey">Histories & Profiles</small></p>
+              <p class="is-size-7 has-text-danger">Issues: Weak recency, high storage costs</p>
             </div>
-          </div>
-          <div class="column">
-            <div class="box has-text-centered">
-              <strong>Gradual Evolution</strong>
-              <p class="is-size-7">Hard to distinguish from transient noise.</p>
+            <div class="column">
+              <p><strong>Parametric</strong> <br>
+              <small class="has-text-grey">Adapters (LoRA)</small></p>
+              <p class="is-size-7 has-text-danger">Issues: Expensive updates, forgetting</p>
             </div>
           </div>
         </div>
       </div>
 
-      <p>
-        To address this, we propose a <strong>Continual LLM Personalization</strong> framework that focuses on:
-      </p>
-      <ul>
-        <li><strong>Selective Drift Detection:</strong> Identifying genuine evolution vs. temporary noise.</li>
-        <li><strong>Robust Adaptation:</strong> Ensuring the model evolves meaningfully without over-fitting to outliers.</li>
-      </ul>
+      <div class="column is-12">
+        <div class="box has-background-warning-light">
+          <p class="subtitle is-5 has-text-centered"><strong>The Core Challenge: Preference Drifts</strong></p>
+          <div class="columns has-text-centered">
+            <div class="column">
+              <div class="icon is-large has-text-warning">
+                <i class="fas fa-wave-square fa-2x"></i>
+              </div>
+              <p class="is-weight-bold">Continuous & Noisy</p>
+              <p class="is-size-7">No clear task boundaries or abrupt shifts</p>
+            </div>
+            <div class="column">
+              <div class="icon is-large has-text-warning">
+                <i class="fas fa-chart-line fa-2x"></i>
+              </div>
+              <p class="is-weight-bold">Gradual Evolution</p>
+              <p class="is-size-7">Hard to distinguish from transient noise</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-12">
+        <div class="content">
+          <p class="has-text-centered is-size-5">
+            We propose <strong>Continual LLM Personalization</strong> to achieve:
+          </p>
+          <div class="columns">
+            <div class="column has-text-centered">
+              <span class="tag is-info is-light is-large">Selective Drift Detection</span>
+            </div>
+            <div class="column has-text-centered">
+              <span class="tag is-success is-light is-large">Robust Adaptation</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-  
+
+<hr>
+
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">How SPRInG Works</h2>
-    <div class="columns is-centered">
+    <div class="columns is-centered mt-5">
       <div class="column is-full-width">
-        <img src="./static/images/spring_method.png" alt="SPRInG Method Overview" style="width:100%; margin-bottom:2rem;">
-        <div class="content has-text-justified">
-          <p>
-            <strong>SPRInG</strong> operates in two key phases:
-          </p>
-          <ul>
-            <li><strong>Drift-Driven Selective Adaptation:</strong> Identifies and learns only high-novelty interactions that signal genuine preference shifts.</li>
-            <li><strong>Retrieval-Interpolated Generation:</strong> Dynamically fuses parametric adapter knowledge with historical evidence at the logit level.</li>
-          </ul>
+        <div class="box p-0 overflow-hidden" style="border: 1px solid #eee;">
+          <img src="./static/images/spring_method.png" alt="SPRInG Method Overview" style="width:100%; display:block;">
+        </div>
+        
+        <div class="columns mt-4">
+          <div class="column">
+            <div class="card card-equal-height" style="height: 100%;">
+              <div class="card-content">
+                <p class="title is-5 has-text-info">1. Drift-Driven Selective Adaptation</p>
+                <p class="is-size-6">Identifies and learns only <strong>high-novelty interactions</strong> that signal genuine preference shifts.</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card card-equal-height" style="height: 100%;">
+              <div class="card-content">
+                <p class="title is-5 has-text-success">2. Retrieval-Interpolated Generation</p>
+                <p class="is-size-6">Dynamically fuses <strong>parametric adapter knowledge</strong> with historical evidence at the logit level.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
