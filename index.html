@@ -165,36 +165,38 @@
 </section>
 
 
-<section class="section" style="background-color: #fafafa;">
+<section class="section" style="background-color: #fafafa; padding-top: 3rem;">
   <div class="container is-max-desktop">
     <div class="has-text-centered mb-6">
       <h2 class="title is-2" style="font-weight: 800; letter-spacing: -1px;">Motivation</h2>
-      <p class="subtitle is-5 has-text-grey">Bridging the gap between static personalization and evolving user traits</p>
+      <p class="subtitle is-4 has-text-grey">Bridging the gap between static personalization and evolving user traits</p>
     </div>
 
     <div class="columns is-centered mb-6">
       <div class="column is-11">
-        <h3 class="title is-4 mb-4" style="display: flex; align-items: center;">
-          <span style="background: #4a4a4a; color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; justify-content: center; align-items: center; font-size: 0.9rem; margin-right: 12px;">1</span>
-          Existing Personalization: The Time-Invariant Trap
-        </h3>
-        <p class="is-size-6 mb-5">
-          Current methods primarily rely on a <strong>time-invariant</strong> view of the user. Fixed histories are repeatedly used for retrieval, or parametric models are frozen after initial training, failing to account for constant <strong>preference drifts</strong>.
-        </p>
+        <div class="box" style="border: 1px solid #eee; box-shadow: none; border-radius: 20px; padding: 2.5rem;">
+          <h3 class="title is-3 mb-4" style="display: flex; align-items: center;">
+            <span style="background: #4a4a4a; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; margin-right: 15px; font-weight: bold;">1</span>
+            The Time-Invariant Trap
+          </h3>
+          <p class="is-size-5 mb-5">
+            Existing LLM personalization methods primarily rely on a <strong>time-invariant</strong> view of the user. Fixed histories are repeatedly used for retrieval, or parametric models are frozen after initial training, failing to account for constant <strong>preference drifts</strong>.
+          </p>
 
-        <div class="columns">
-          <div class="column">
-            <div style="border-left: 3px solid #3273dc; padding-left: 1rem; height: 100%;">
-              <p class="title is-6 mb-2">Non-parametric Strategies</p>
-              <p class="is-size-7 has-text-grey mb-2">Retrieved interaction histories or user profiles during prompting.</p>
-              <p class="is-size-6 has-text-danger-dark" style="font-weight: 600;">✕ Weak recency signals & rising costs of storage/retrieval.</p>
+          <div class="columns">
+            <div class="column">
+              <div style="border-left: 4px solid #3273dc; padding-left: 1.2rem; height: 100%;">
+                <p class="title is-5 mb-2">Non-parametric Strategies</p>
+                <p class="is-size-5 has-text-grey mb-3">Retrieved interaction histories or user profiles during prompting.</p>
+                <p class="is-size-5 has-text-danger-dark" style="font-weight: 600;">✕ Weak recency signals & rising costs of storage/retrieval.</p>
+              </div>
             </div>
-          </div>
-          <div class="column">
-            <div style="border-left: 3px solid #48c774; padding-left: 1rem; height: 100%;">
-              <p class="title is-6 mb-2">Parametric Strategies</p>
-              <p class="is-size-7 has-text-grey mb-2">Encoding preferences through parameter adaptation (e.g., LoRA).</p>
-              <p class="is-size-6 has-text-danger-dark" style="font-weight: 600;">✕ Expensive updates & risk of catastrophic forgetting.</p>
+            <div class="column">
+              <div style="border-left: 4px solid #48c774; padding-left: 1.2rem; height: 100%;">
+                <p class="title is-5 mb-2">Parametric Strategies</p>
+                <p class="is-size-5 has-text-grey mb-3">Encoding user preferences through direct parameter adaptation (e.g., LoRA).</p>
+                <p class="is-size-5 has-text-danger-dark" style="font-weight: 600;">✕ Expensive updates & risk of catastrophic forgetting.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -203,30 +205,26 @@
 
     <div class="columns is-centered mb-6">
       <div class="column is-11">
-        <div class="box" style="border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border-radius: 16px;">
-          <h3 class="title is-4 mb-4" style="display: flex; align-items: center;">
-            <span style="background: #4a4a4a; color: white; border-radius: 50%; width: 28px; height: 28px; display: flex; justify-content: center; align-items: center; font-size: 0.9rem; margin-right: 12px;">2</span>
-            Continual Learning vs. Personalization Reality
+        <div class="box" style="border: 1px solid #eee; box-shadow: none; border-radius: 20px; padding: 2.5rem;">
+          <h3 class="title is-3 mb-4" style="display: flex; align-items: center;">
+            <span style="background: #4a4a4a; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; margin-right: 15px; font-weight: bold;">2</span>
+            Standard CL vs. Personalization Reality
           </h3>
-          <p class="is-size-6 mb-5">
+          <p class="is-size-5 mb-5">
             While Continual Learning (CL) offers a path to sequential updates, standard approaches are suboptimal because user interaction streams are <strong>inherently continuous and noisy</strong>.
           </p>
           
-          <div class="columns has-text-centered">
+          <div class="columns has-text-centered mb-4">
             <div class="column">
-              <p class="mb-1" style="font-size: 1.5rem;">🚧</p>
-              <p class="title is-6 mb-1">No Clear Boundaries</p>
-              <p class="is-size-7 has-text-grey">Preferences drift gradually rather than exhibiting discrete task shifts.</p>
+              <p class="mb-2" style="font-size: 3rem;">🚧</p>
+              <p class="title is-4 mb-2">No Clear Boundaries</p>
+              <p class="is-size-5 has-text-grey">Preferences drift gradually rather than exhibiting discrete task shifts or abrupt distribution changes.</p>
             </div>
-            <div class="column">
-              <p class="mb-1" style="font-size: 1.5rem;">🌪️</p>
-              <p class="title is-6 mb-1">Transient Noise</p>
-              <p class="is-size-7 has-text-grey">Noise can be mistaken for informative drift due to high loss or uncertainty.</p>
+            <div class="column" style="border-left: 1px solid #eee;">
+              <p class="mb-2" style="font-size: 3rem;">🌪️</p>
+              <p class="title is-4 mb-2">Transient Noise</p>
+              <p class="is-size-5 has-text-grey">Transient noise can be mistaken for informative drift due to high loss or uncertainty metrics.</p>
             </div>
-          </div>
-          
-          <div class="notification is-light mt-4 is-size-6 has-text-centered" style="border-radius: 8px;">
-            The central challenge lies in <strong>Selective Drift Detection</strong>: distinguishing genuine preference evolution from transient noise.
           </div>
         </div>
       </div>
@@ -234,65 +232,65 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="padding-top: 4rem;">
   <div class="container is-max-desktop">
     <div class="has-text-centered mb-6">
       <h2 class="title is-2" style="font-weight: 800; letter-spacing: -1px;">How SPRInG Works</h2>
-      <p class="is-size-6 has-text-grey">Selective Parametric adaptation and Retrieval-Interpolated Generation</p>
+      <p class="is-size-5 has-text-grey"><strong>S</strong>elective <strong>P</strong>arametric adaptation and <strong>R</strong>etrieval-<strong>In</strong>terpolated <strong>G</strong>eneration.</p>
     </div>
 
     <div class="columns is-centered">
-      <div class="column is-full">
-        <div class="box p-0 mb-6" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #f0f0f0;">
+      <div class="column is-11">
+        <div class="box p-0 mb-6" style="border-radius: 12px; overflow: hidden; box-shadow: none; border: 1px solid #f0f0f0;">
           <img src="./static/images/spring_method.png" alt="SPRInG Method Overview" style="width: 100%; display: block;">
         </div>
 
-        <div class="columns is-variable is-5">
-          <div class="column is-6">
-            <div class="notification is-white" style="border-radius: 16px; border: 1px solid #eee; height: 100%; padding: 2rem;">
+        <div class="columns is-multiline">
+          <div class="column is-12 mb-5">
+            <div class="notification is-white" style="border-radius: 20px; border: 1px solid #eee; padding: 2.5rem; box-shadow: none;">
               <div class="is-flex is-align-items-center mb-4">
-                <span class="tag is-info is-medium mr-3" style="font-weight: 700;">TRAINING</span>
-                <h3 class="title is-4 mb-0" style="color: #3273dc;">Drift-Driven Selective Adaptation</h3>
+                <span class="tag is-info is-large mr-3" style="font-weight: 800; border-radius: 6px;">TRAINING</span>
+                <h3 class="title is-3 mb-0" style="color: #3273dc;">Drift-Driven Selective Adaptation</h3>
               </div>
               
-              <div class="content is-size-6">
-                <p class="mb-4">SPRInG selectively updates the adapter by prioritizing interactions with high <strong>Drift Scores</strong>.</p>
+              <div class="content is-size-5">
+                <p class="mb-4">SPRInG selectively updates the adapter by prioritizing interactions with high <strong>Drift Scores</strong> to isolate genuine preference novelty.</p>
                 
-                <div style="background: #f8f9fa; padding: 1.2rem; border-radius: 10px; border-left: 4px solid #3273dc;" class="mb-4">
-                  <p class="is-size-7 has-text-grey mb-2"><strong>Drift Score (Eq. 1)</strong></p>
-                  <p class="is-size-5 has-text-centered mb-1">
-                    $$ \mathcal{S}(q, a) = \underbrace{-\log \frac{p_{adap}}{p_{base}}}_{Novelty} + \alpha \underbrace{\log p_{base}}_{Quality} $$
-                  </p>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #3273dc;" class="mb-5">
+                  <p class="is-size-6 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Drift Score (Eq. 1)</p>
+                  <div class="is-size-4 has-text-centered mb-1">
+                    $$ \mathcal{S}(q, a) = \underbrace{-\log \frac{p_{adap}}{p_{base}}}_{\text{Novelty}} + \alpha \underbrace{\log p_{base}}_{\text{Quality}} $$
+                  </div>
                 </div>
 
-                <ul class="ml-4">
-                  <li><strong>Drift Sample Selection:</strong> Balances novelty (unfamiliar preference patterns) with linguistic quality (validity).</li>
-                  <li><strong>Residual Replay Buffer:</strong> Stores interactions that remain challenging after parametric updates to preserve sparse nuances.</li>
+                <ul class="ml-4" style="line-height: 1.6;">
+                  <li class="mb-3"><strong>Drift Sample Selection:</strong> Balances novelty (unfamiliar preference patterns) with linguistic quality (validity).</li>
+                  <li class="mb-3"><strong>Residual Replay Buffer:</strong> Re-evaluates post-update to store interactions that remain challenging, preserving sparse historical nuances.</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="column is-6">
-            <div class="notification is-white" style="border-radius: 16px; border: 1px solid #eee; height: 100%; padding: 2rem;">
+          <div class="column is-12">
+            <div class="notification is-white" style="border-radius: 20px; border: 1px solid #eee; padding: 2.5rem; box-shadow: none;">
               <div class="is-flex is-align-items-center mb-4">
-                <span class="tag is-success is-medium mr-3" style="font-weight: 700;">INFERENCE</span>
-                <h3 class="title is-4 mb-0" style="color: #48c774;">Gated Retrieval & Interpolation</h3>
+                <span class="tag is-success is-large mr-3" style="font-weight: 800; border-radius: 6px;">INFERENCE</span>
+                <h3 class="title is-3 mb-0" style="color: #48c774;">Gated Retrieval & Interpolation</h3>
               </div>
 
-              <div class="content is-size-6">
-                <p class="mb-4">Dynamically fuses parametric knowledge with historical evidence at the <strong>logit level</strong>.</p>
+              <div class="content is-size-5">
+                <p class="mb-4">Dynamically balances internalized parametric knowledge with explicit non-parametric context at the <strong>logit level</strong>.</p>
 
-                <div style="background: #f8f9fa; padding: 1.2rem; border-radius: 10px; border-left: 4px solid #48c774;" class="mb-4">
-                  <p class="is-size-7 has-text-grey mb-2"><strong>Logit Interpolation (Eq. 8)</strong></p>
-                  <p class="is-size-5 has-text-centered mb-1">
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 5px solid #48c774;" class="mb-5">
+                  <p class="is-size-6 has-text-grey mb-3" style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Logit Interpolation (Eq. 8)</p>
+                  <div class="is-size-4 has-text-centered mb-1">
                     $$ p_{fin} = \lambda \cdot p_{ret} + (1 - \lambda) \cdot p_{par} $$
-                  </p>
+                  </div>
                 </div>
 
-                <ul class="ml-4">
-                  <li><strong>Relevance Gating:</strong> Filters out irrelevant context using a similarity threshold $\sigma$ to prevent retrieval noise.</li>
-                  <li><strong>Dual-path Fusion:</strong> Interpolates the parametric path with the retrieval-augmented path for a robust final distribution.</li>
+                <ul class="ml-4" style="line-height: 1.6;">
+                  <li class="mb-3"><strong>Relevance Gating:</strong> Applies a similarity threshold $\sigma$ to ensure retrieval only occurs when strong historical evidence exists.</li>
+                  <li class="mb-3"><strong>Dual-path Fusion:</strong> Interpolates the Parametric Path and Retrieval-augmented Path to mitigate the risk of irrelevant context noise.</li>
                 </ul>
               </div>
             </div>
