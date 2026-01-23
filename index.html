@@ -168,16 +168,55 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Motivation</h2>
-    <div class="content has-text-justified">
+    
+    <div class="content">
       <p>
-        Existing personalization methods often assume a <strong>time-invariant</strong> user, where preferences remain static. 
-        However, in reality, user traits constantly evolve, leading to <strong>preference drifts</strong>. 
-        Standard models struggle to adapt to these changes without expensive retraining or risking catastrophic forgetting.
+        While LLM personalization is rapidly advancing, existing methods primarily rely on a <strong>time-invariant</strong> view of the user:
       </p>
+      <ul>
+        <li>
+          <strong>Non-parametric Strategies:</strong> Use retrieved histories or profiles. 
+          <span class="has-text-grey-light">→ Issues: Weak recency signals, rising storage/retrieval costs.</span>
+        </li>
+        <li>
+          <strong>Parametric Strategies:</strong> Encode preferences via adapters (e.g., LoRA). 
+          <span class="has-text-grey-light">→ Issues: Expensive updates, risk of catastrophic forgetting.</span>
+        </li>
+      </ul>
+
+      <hr>
+
+      <div class="notification is-light">
+        <p>
+          <strong>The Challenge:</strong> Real-world user traits are not static; they exhibit constant <strong>preference drifts</strong>. Standard Continual Learning (CL) struggles here because user streams are:
+        </p>
+        <div class="columns">
+          <div class="column">
+            <div class="box has-text-centered">
+              <strong>Continuous & Noisy</strong>
+              <p class="is-size-7">No clear task boundaries or abrupt shifts.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box has-text-centered">
+              <strong>Gradual Evolution</strong>
+              <p class="is-size-7">Hard to distinguish from transient noise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        To address this, we propose a <strong>Continual LLM Personalization</strong> framework that focuses on:
+      </p>
+      <ul>
+        <li><strong>Selective Drift Detection:</strong> Identifying genuine evolution vs. temporary noise.</li>
+        <li><strong>Robust Adaptation:</strong> Ensuring the model evolves meaningfully without over-fitting to outliers.</li>
+      </ul>
     </div>
   </div>
 </section>
-
+  
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">How SPRInG Works</h2>
