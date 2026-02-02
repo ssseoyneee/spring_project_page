@@ -330,11 +330,10 @@
 
     <div class="columns is-centered mb-6">
       <div class="column is-11">
-        <h3 class="title is-4">Main Results</h3>
         <div class="box p-0 mb-4" style="border-radius: 12px; overflow: hidden; box-shadow: none;">
           <img src="./static/images/main_results.png" alt="Main Results" style="width: 100%; display: block;">
         </div>
-        <div class="content is-size-6 has-text-justified">
+        <div class="content is-size-6 has-text-centered">
           <p>
             <strong>SPRInG</strong> consistently outperforms all baselines in both Abstract Generation and Review Writing tasks. 
             It achieves relative improvements of up to <strong>15.85% in ROUGE-L</strong> over the strongest continual learning baselines. 
@@ -345,36 +344,36 @@
     </div>
 
     <div class="columns is-centered mb-6">
-      <div class="column is-5">
-        <h3 class="title is-5">Selective Adaptation</h3>
+      <div class="column is-6">
         <div class="box p-0 mb-3" style="border-radius: 12px; overflow: hidden; box-shadow: none;">
           <img src="./static/images/selective_adaptation.png" alt="Selective Adaptation" style="width: 100%; display: block;">
         </div>
-        <p class="is-size-7 has-text-grey">
-          Our Top-30% strategy outperforms training on 100% of data, confirming that focusing on high-drift interactions filters out redundant noise and enhances adaptation efficiency.
-        </p>
+        <div class="content is-size-6 has-text-centered">
+          <p>
+            Our Top-30% strategy outperforms training on 100% of data, confirming that focusing on high-drift interactions filters out redundant noise and enhances adaptation efficiency.
+          </p>
+        </div>
       </div>
-      <div class="column is-1"></div> <div class="column is-5">
-        <h3 class="title is-5">Inference Interpolation</h3>
+      <div class="column is-6">
         <div class="box p-0 mb-3" style="border-radius: 12px; overflow: hidden; box-shadow: none;">
           <img src="./static/images/interpolation.png" alt="Interpolation" style="width: 100%; display: block;">
         </div>
-        <p class="is-size-7 has-text-grey">
-          Balanced logit interpolation ($\lambda=0.5$) yields the best results by combining stable parametric traits with specific historical details from the residual buffer.
-        </p>
+        <div class="content is-size-6 has-text-centered">
+          <p>
+            Balanced logit interpolation ($ \lambda=0.5 $) yields the best results by combining stable parametric traits with specific historical details from the residual buffer.
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="columns is-centered mb-6">
       <div class="column is-11">
-        <h3 class="title is-4">Scalability & Robustness</h3>
         <div class="box p-0 mb-4" style="border-radius: 12px; overflow: hidden; box-shadow: none;">
           <img src="./static/images/scalability.png" alt="Scalability" style="width: 100%; display: block;">
         </div>
-        <div class="content is-size-6 has-text-justified">
+        <div class="content is-size-6 has-text-centered">
           <p>
-            SPRInG demonstrates robust scalability across varying interaction volumes. 
-            Unlike baselines that degrade as history grows (due to noise accumulation), SPRInG effectively filters irrelevant signals and leverages extended context to improve performance.
+            SPRInG demonstrates <strong>robust scalability</strong> across varying interaction volumes. 
           </p>
         </div>
       </div>
